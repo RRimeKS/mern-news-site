@@ -36,9 +36,9 @@ const CategoryOfNews = () => {
   }, [news]);
 
   if (isLoading) return <Loader />;
-  if (error?.status === 404) {
-    return <Navigate to={"*"} />;
-  }
+  // if (error?.status === 404) {
+  //   return <Navigate to={"*"} />;
+  // }
 
   return (
     <>
