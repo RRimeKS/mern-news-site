@@ -3,9 +3,10 @@ const ErrorHandler = require("../utils/ErrorHandler");
 const User = require("../models/User.models");
 
 const isAuthenticated = async (req, res, next) => {
-  const { token } = req?.cookies;
-  console.log(req?.cookie);
-  console.log(token);
+  const token = req.cookies.token; // Burada 'token', cookie adınızdır.
+  const authHeader = req.headers['authorization'];
+  console.log("req.cookies.token: ",token);
+  console.log("req.headers['authorization']: ",authHeader);
 
   if (!token) return next(new ErrorHandler("Lütfen Giriş Yapınız.", 400));
 

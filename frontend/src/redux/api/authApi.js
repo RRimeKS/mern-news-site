@@ -19,7 +19,11 @@ export const authApi = createApi({
       },
       async onQueryStarted(args, { dispatch, queryFulfilled }) {
         try {
-          const { data } = await queryFulfilled;
+          const { data } = await queryFulfilled({
+            headers: {
+              Authorization: `Bearer ${document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, "$1")}`,
+            },
+          });
           dispatch(userApi.endpoints.getMe.initiate(null));
         } catch (error) {
           console.log(error);
