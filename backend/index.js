@@ -24,7 +24,7 @@ app.use(express.json({ limit: "10mb", extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://incredible-selkie-a3cde3.netlify.app",
+    origin: process.env.FRONTEND_URL,
     credentials: true,
   })
 );
