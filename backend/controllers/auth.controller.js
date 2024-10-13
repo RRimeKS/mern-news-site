@@ -28,6 +28,8 @@ exports.login = CatchAsyncHandler(async (req, res, next) => {
 exports.logout = CatchAsyncHandler(async (req, res, next) => {
   const cookieOpt = {
     httpOnly: true,
+    secure: true,
+    sameSite: 'None',
     expires: new Date(Date.now())
   }
 
