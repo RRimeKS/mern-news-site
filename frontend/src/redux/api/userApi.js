@@ -3,7 +3,7 @@ import { setIsAuthenticated, setLoading, setUser } from "../features/userSlice";
 
 export const userApi = createApi({
   reducerPath: "userApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://mern-news-site-2.onrender.com/api" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "/api" }),
   tagTypes: ["User"],
   endpoints: (builder) => ({
     getMe: builder.query({
