@@ -1,5 +1,13 @@
+const cors = require("cors");
 const express = require("express");
 const app = express();
+
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL,
+    credentials: true,
+  })
+);
 
 process.on("uncaughtException", (err) => {
   console.log(`ERROR: ${err}`);
@@ -7,7 +15,6 @@ process.on("uncaughtException", (err) => {
 
 //MODULES
 const dotenv = require("dotenv").config({ path: "config/config.env" });
-const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const path = require('path');
 
@@ -22,12 +29,6 @@ const errorMiddleware = require("./middlewares/error.middleware");
 //MIDDLEWARES
 app.use(express.json({ limit: "10mb", extended: true }));
 app.use(cookieParser());
-app.use(
-  cors({
-    origin: process.env.FRONTEND_URL,
-    credentials: true,
-  })
-);
 
 cloudinary();
 dbConnect();

@@ -48,7 +48,7 @@ const CategoryOfNews = () => {
         <div className="flex justify-center">
           <div className="">
             <div className="mb-10">
-              <Title title={`${news?.news[0]?.category[0]?.name}`} />
+              <Title title={`${news?.news[0]?.category[0]?.name}`} slug={`${news?.news[0]?.category[0]?.slug}`} />
             </div>
 
             <div className="relative flex bg-[#39608B] lg:max-h-[400px] max-lg:max-h-[600px] category-news-wrapper">
