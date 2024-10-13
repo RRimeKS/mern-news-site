@@ -10,6 +10,7 @@ export const authApi = createApi({
       query(body) {
         return {
           url: `/login`,
+          credentials: 'include',
           method: "POST",
           body,
         };

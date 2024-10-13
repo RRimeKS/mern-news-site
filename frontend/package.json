@@ -1,5 +1,6 @@
 {
   "name": "turanhaber",
+  "homepage": "https://delightful-chimera-e203f4.netlify.app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -54,7 +55,7 @@
     ]
   },
   "proxy": "https://mern-news-site-2.onrender.com",
-  "localhost":"",
+  "localhost": "",
   "devDependencies": {
     "tailwindcss": "^3.4.13"
   }
