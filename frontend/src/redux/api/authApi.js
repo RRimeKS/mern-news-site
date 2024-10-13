@@ -3,14 +3,16 @@ import { userApi } from "./userApi";
 
 export const authApi = createApi({
   reducerPath: "authApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://mern-news-site-2.onrender.com/api" }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://mern-news-site-2.onrender.com/api",
+    credentials: "include",
+  }),
   tagTypes: ["User"],
   endpoints: (builder) => ({
     login: builder.mutation({
       query(body) {
         return {
           url: `/login`,
-          credentials: 'include',
           method: "POST",
           body,
         };
@@ -31,14 +33,15 @@ export const authApi = createApi({
           method: "POST",
           body,
         };
-      }
+      },
     }),
     logout: builder.query({
       query: () => ({
-        url: "/logout"
-      })
+        url: "/logout",
+      }),
     }),
   }),
 });
 
-export const { useLoginMutation, useLazyLogoutQuery, useRegisterMutation} = authApi;
+export const { useLoginMutation, useLazyLogoutQuery, useRegisterMutation } =
+  authApi;
