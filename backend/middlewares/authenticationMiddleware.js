@@ -4,7 +4,7 @@ const User = require("../models/User.models");
 
 const isAuthenticated = async (req, res, next) => {
   const { token } = req?.cookies;
-  console.log(req?.cookies);
+  console.log(req?.cookie);
   console.log(token);
 
   if (!token) return next(new ErrorHandler("Lütfen Giriş Yapınız.", 400));
