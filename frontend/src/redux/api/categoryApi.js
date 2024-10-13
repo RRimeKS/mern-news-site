@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const categoryApi = createApi({
   reducerPath: "categoryApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "https://mern-news-site-2.onrender.com" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://mern-news-site-2.onrender.com/api" }),
   tagTypes: ["Category"],
   endpoints: (builder) => ({
     getAllCategories: builder.query({
@@ -12,7 +12,7 @@ export const categoryApi = createApi({
     createCategory: builder.mutation({
       query(body) {
         return {
-          url: `/api/category`,
+          url: `/category`,
           method: "POST",
           body,
         };
