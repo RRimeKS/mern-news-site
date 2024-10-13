@@ -1,6 +1,5 @@
 {
   "name": "turanhaber",
-  "homepage": "https://www.turanocaklari.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -54,7 +53,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "https://mern-news-site-2.onrender.com",
+  "localhost":"",
   "devDependencies": {
     "tailwindcss": "^3.4.13"
   }
