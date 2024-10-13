@@ -5,8 +5,7 @@ exports.sendToken = async (user, res, statusCode) => {
     expires: new Date(Date.now() + 24 * 60 * 60 * 1000 * 7),
     httpOnly: true,
     secure: true, // HTTPS kullanıyorsanız true olmalı
-    domain: '.turanocaklarii.netlify.app', // Frontend domaini (".myfrontend.com" subdomainleri de kapsar)
-    path: '/', // Genel olarak tüm uygulamada geçerli olacak şekilde ayarlanır
+
   };
 
   res.status(statusCode).cookie("token", token, cookieOpt).json({ token });
