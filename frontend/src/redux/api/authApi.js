@@ -3,7 +3,7 @@ import { userApi } from "./userApi";
 
 export const authApi = createApi({
   reducerPath: "authApi",
-  baseQuery: fetchBaseQuery({ baseUrl: "/api" }),
+  baseQuery: fetchBaseQuery({ baseUrl: "https://mern-news-site-2.onrender.com/api" }),
   tagTypes: ["User"],
   endpoints: (builder) => ({
     login: builder.mutation({
